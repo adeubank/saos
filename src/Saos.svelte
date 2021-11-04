@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { createEventDispatcher } from 'svelte';
 
+  export let cssClass = "";
   export let animation = "none";
   export let animation_out = "none; opacity: 0";
   export let once = false;
@@ -67,7 +68,7 @@
   });
 </script>
 
-<div id={countainer} style={css_observer}>
+<div id={countainer} class={cssClass} style={css_observer}>
   {#if observing}
     <div style="animation: {animation}; {css_animation}">
       <slot />
